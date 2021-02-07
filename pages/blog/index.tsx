@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import NextLink from 'next/link';
-import { Box, Heading, Link, Flex } from '@chakra-ui/react';
+import { Box, Heading, Link, Flex, Text } from '@chakra-ui/react';
 
 export interface IBlogType {
   slug: string;
@@ -33,6 +33,11 @@ const BlogIndexPage: NextPage<IBlogIndexPageProps> = (props) => (
           </Link>
         </NextLink>
       ))}
+      <NextLink href="/" passHref>
+        <Link marginY="2rem">
+          <Text fontStyle="italic">Back to welcome page</Text>
+        </Link>
+      </NextLink>
     </Flex>
   </Box>
 );

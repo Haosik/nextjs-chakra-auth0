@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import Router from 'next/router';
-import { Heading, Link, Flex, Box, Button, Code } from '@chakra-ui/react';
+import { Heading, Link, Flex, Box, Button, Code, Text } from '@chakra-ui/react';
 import { GetServerSideProps, NextPage } from 'next';
 import auth0 from '../lib/auth0';
 
@@ -31,6 +31,11 @@ const SecretPage: NextPage<ISecretPageProps> = (props) => {
         >
           {props.error ? 'Log in' : 'Log out'}
         </Button>
+        <NextLink href="/" passHref>
+          <Link marginY="2rem">
+            <Text fontStyle="italic">Back to welcome page</Text>
+          </Link>
+        </NextLink>
       </Flex>
     </Box>
   );
