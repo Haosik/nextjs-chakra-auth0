@@ -4,6 +4,7 @@ import { Box, Flex, Link, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import fetch from 'node-fetch';
 import React from 'react';
 import ErrorPage from 'next/error';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
 export interface IUserData {
   id: string;
@@ -58,7 +59,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   try {
     const { id } = params;
 
-    const result = await fetch(`/api/user/${id}`);
+    const result = await fetch(
+      process.env.isDev
+        ? `http://localhost:3000/api/user/${id}`
+        : `https://nextjs-chakra-auth0.vercel.app/api/user/${id}`
+    );
 
     const data: IUserData = await result.json();
 
