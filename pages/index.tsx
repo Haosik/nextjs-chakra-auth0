@@ -13,7 +13,7 @@ const IndexPage: NextPage = () => {
         <Link>Link to About page</Link>
       </NextLink>
 
-      <NextLink href="/users/3" passHref>
+      <NextLink href="/user/3" passHref>
         <Link>Link to user info</Link>
       </NextLink>
 
@@ -25,7 +25,6 @@ const IndexPage: NextPage = () => {
         <Link>Link to Secret</Link>
       </NextLink>
     </Flex>
-    
   );
 };
 
