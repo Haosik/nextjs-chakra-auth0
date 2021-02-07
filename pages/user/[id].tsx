@@ -58,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   try {
     const { id } = params;
 
-    const result = await fetch(`http://localhost:3000/api/user/${id}`);
+    const result = await fetch(`/api/user/${id}`);
 
     const data: IUserData = await result.json();
 
